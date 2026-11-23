@@ -2,480 +2,632 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>Typerception</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tyshawn Jamison · Typerception</title>
 <meta name="description" content="Tyshawn Jamison is a Brooklyn filmmaker, cinematographer and SAG-AFTRA actor making films, documentaries, music videos and brand content.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Tyshawn Jamison · Typerception">
+<meta property="og:description" content="Films, documentaries, music videos and brand content from Brooklyn, New York.">
+<meta property="og:image" content="media/hero_reel_p.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
 <style>
-/* Layout: one dark screening room. Full-bleed film moments alternate with quiet text bands. */
 :root{
-  --ink:#0A0A0B; --ink-2:#121214; --ink-3:#1B1B1E; --line:#2A2A2E;
-  --paper:#EDE9E3; --muted:#B9B3AA; --dim:#8F8A82;
-  --gold:#E2B262; --gold-2:#F3CF93;
-  --display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-  --body:Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
-  --gutter-l:max(16px, env(safe-area-inset-left, 0px));
-  --gutter-r:max(16px, env(safe-area-inset-right, 0px));
-  color-scheme:dark;
+  --paper:#EAE5DB; --paper-2:#E0DACD; --ink:#131211; --ink-2:#1D1B19;
+  --mute:#7A746B; --mute-d:#8E887F; --red:#C93A1F;
+  --g:clamp(16px,2vw,28px);
+  --sans:'Archivo',system-ui,sans-serif; --serif:'Newsreader',Georgia,serif;
+  --ease:cubic-bezier(.2,.7,.1,1);
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:clip}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
-a{color:var(--gold)} a:hover{color:var(--gold-2)}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-h1,h2,h3{font-family:var(--display);font-weight:500;text-wrap:balance;margin:0;line-height:1.02}
-p{margin:0}
-.wrap{max-width:1320px;margin:0 auto;padding-left:calc(var(--gutter-l) + 2vw);padding-right:calc(var(--gutter-r) + 2vw)}
-.eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
-.mono{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted)}
-.btn{display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:0 24px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid transparent;transition:transform .25s ease, box-shadow .25s ease, background .25s ease}
-.btn-gold{background:var(--gold);color:var(--ink)} .btn-gold:hover{color:var(--ink);transform:translateY(-2px);box-shadow:0 12px 30px rgba(226,178,98,.25)}
-.btn-ghost{border-color:var(--paper);color:var(--paper)} .btn-ghost:hover{color:var(--ink);background:var(--paper)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;overflow-x:clip}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,video{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--red);color:var(--paper)}
 
-/* Header */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;transition:background .4s ease, backdrop-filter .4s ease}
-.top.solid{background:rgba(10,10,11,.82);backdrop-filter:blur(10px)}
-.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding-block:16px}
-.logo{font-family:var(--display);font-size:24px;letter-spacing:.3em;color:var(--paper);text-decoration:none}
-.nav{display:flex;flex-wrap:wrap;align-items:center;gap:22px;font-size:14px;letter-spacing:.06em}
-.nav a:not(.btn){color:var(--paper);text-decoration:none}
-.nav a:not(.btn):hover{color:var(--gold)}
+/* Type roles */
+.lab{font-family:var(--sans);font-stretch:125%;font-weight:600;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;line-height:1.3}
+.cond{font-family:var(--sans);font-stretch:62%;font-weight:800;text-transform:uppercase;line-height:.82;letter-spacing:-.005em}
+.mute{color:var(--mute)}
 
-/* Hero */
-.hero{position:relative;height:min(860px, 92svh);min-height:560px;margin-top:-82px;overflow:hidden;background:#000}
-.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,11,.9) 0%,rgba(10,10,11,.45) 55%,rgba(10,10,11,.05) 100%)}
-.bar{position:absolute;left:0;right:0;height:8%;background:#000;z-index:2}
-.bar.t{top:0}.bar.b{bottom:0}
-.hero .wrap{position:relative;z-index:3;height:100%;display:flex;flex-direction:column;justify-content:center;gap:26px}
-.hero h1{font-size:clamp(46px,7.4vw,112px);max-width:980px}
-.hero h1 em{color:var(--gold)}
-.hero .lede{max-width:540px;font-size:18px;color:#D6D1C9}
-.hero .ctas{display:flex;flex-wrap:wrap;gap:14px}
-.pause{position:absolute;right:calc(var(--gutter-r) + 3vw);bottom:12%;z-index:4;width:46px;height:46px;border-radius:50%;border:1px solid rgba(237,233,227,.6);background:rgba(10,10,11,.3);color:var(--paper);display:grid;place-items:center;cursor:pointer}
-.cue{position:absolute;left:50%;bottom:11%;z-index:3;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:11px;letter-spacing:.3em;color:var(--muted)}
-.cue i{display:block;width:1px;height:34px;background:currentColor}
+/* Header: blends over paper and film alike */
+.hd{position:fixed;inset:0 0 auto;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:16px var(--g);color:#fff;mix-blend-mode:difference;pointer-events:none}
+.hd>*{pointer-events:auto}
+.hd nav{display:flex;gap:28px}
+.hd nav a,.hd .r a{position:relative}
+.hd nav a::after,.hd .r a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.hd nav a:hover::after,.hd .r a:hover::after{transform:scaleX(1);transform-origin:left}
+.hd .r{display:flex;gap:28px;justify-content:flex-end}
+.wm{font-family:var(--sans);font-stretch:125%;font-weight:800;font-size:13px;letter-spacing:.02em;text-transform:uppercase}
 
-/* Marquee */
-.marquee{border-block:1px solid var(--line);overflow:hidden;padding-block:22px}
-.marquee .track{display:flex;gap:56px;width:max-content;white-space:nowrap;font-size:13px;letter-spacing:.24em;color:var(--muted)}
-.marquee b{color:var(--gold);font-weight:400}
+/* Hero: the reel in a frame, like a screen in a dark room */
+.hero{height:100svh;min-height:560px;background:var(--ink);padding:52px var(--g) var(--g);position:relative}
+.frame{position:relative;height:100%;overflow:hidden;color:var(--paper)}
+.frame video{position:absolute;inset:0;transform:scale(1.06);transition:transform 2.4s var(--ease)}
+.loaded .frame video{transform:scale(1)}
+.frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(19,18,17,.25),transparent 30%,transparent 55%,rgba(19,18,17,.55))}
+.frame .top{position:absolute;z-index:2;inset:18px 20px auto;display:flex;justify-content:space-between}
+.tc{font-variant-numeric:tabular-nums}
+.tc i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--red);margin-right:8px;vertical-align:1px;animation:rec 1.6s steps(1) infinite}
+@keyframes rec{50%{opacity:0}}
+.frame .bot{position:absolute;z-index:2;left:20px;right:20px;bottom:14px}
+.frame .intro{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:14px;gap:24px}
+.frame .intro{flex-direction:row-reverse}
+.frame .intro p{text-align:right;font-style:italic;font-weight:300;font-size:clamp(17px,1.5vw,22px);line-height:1.25;max-width:24em}
+.name{white-space:nowrap;display:block}
+.name span{display:inline-block;overflow:hidden;vertical-align:top}
+.name span b{display:inline-block;font-weight:inherit;transform:translateY(105%);transition:transform 1.3s var(--ease)}
+.loaded .name span b{transform:none}
 
-/* Sections */
-section.band{padding-block:clamp(72px,10vw,128px)}
-.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:18px;margin-bottom:44px}
-.head h2{font-size:clamp(44px,6vw,80px)}
+/* Shared section scaffolding */
+section{position:relative}
+.wrap{padding:0 var(--g)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--g)}
+.shead{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--g);padding:22px 0;border-top:1px solid currentColor;align-items:baseline}
+.shead .n{grid-column:1/3}.shead .t{grid-column:3/7}.shead .x{grid-column:10/13;text-align:right}
 
-/* Featured work */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:28px}
-.card{color:inherit;text-decoration:none;display:flex;flex-direction:column;gap:12px;min-width:0}
-.card .frame{position:relative;overflow:hidden;aspect-ratio:4/3;background:#000;max-width:100%}
-.card.wide{grid-column:1/-1}
-.card.wide .frame{aspect-ratio:2.39/1}
-.card video,.card img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.35) brightness(.82);transition:transform .9s cubic-bezier(.2,.7,.2,1), filter .6s ease}
-.card:hover video,.card:hover img,.card:focus-visible video{transform:scale(1.05);filter:none}
-.card .tag{position:absolute;left:14px;top:14px;background:rgba(10,10,11,.75);padding:5px 9px}
-.card h3{font-size:30px}
-.card .meta{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+/* Reveal (IntersectionObserver adds .in) */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.clip{clip-path:inset(100% 0 0 0);transition:clip-path 1.4s var(--ease)}
+.clip.in{clip-path:inset(0 0 0 0)}
+.clip .m{transform:scale(1.18);transition:transform 1.8s var(--ease)}
+.clip.in .m{transform:scale(1)}
 
-/* Index */
-.index{display:flex;flex-wrap:wrap;gap:40px;align-items:start}
-.list{flex:1 1 420px;min-width:0;border-top:1px solid var(--line)}
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
-.chip{min-height:42px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--paper);font:inherit;font-size:14px;cursor:pointer;transition:background .2s, color .2s}
-.chip[aria-pressed="true"]{background:var(--paper);color:var(--ink)}
-.row{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;padding:18px 0;border-bottom:1px solid var(--line);color:var(--paper);text-decoration:none;transition:padding-left .3s ease,color .3s ease}
-.row .n{font-family:var(--mono);font-size:12px;color:var(--dim);width:28px}
-.row .t{flex:1 1 180px;font-family:var(--display);font-size:32px;line-height:1.1}
-.row .k{font-family:var(--mono);font-size:11px;color:var(--muted)}
-.row.on,.row:hover{color:var(--gold);padding-left:14px}
-.row.on .t,.row:hover .t{color:var(--gold)}
-.preview{flex:1 1 520px;min-width:0;display:flex;flex-direction:column;gap:14px}
-.screen{position:relative;aspect-ratio:16/10;max-width:100%;overflow:hidden;background:#000;cursor:none}
-.layer{position:absolute;inset:0;opacity:0;transform:scale(1.06);transition:opacity .6s ease, transform 1.2s cubic-bezier(.2,.7,.2,1)}
-.layer.on{opacity:1;transform:none}
-.layer video,.layer img{width:100%;height:100%;object-fit:cover}
-.counter{position:absolute;left:14px;top:14px;z-index:3;background:rgba(10,10,11,.75);padding:5px 9px}
-.cursor{position:absolute;z-index:4;width:86px;height:86px;margin:-43px 0 0 -43px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;font-family:var(--mono);font-size:11px;letter-spacing:.12em;pointer-events:none;opacity:0;transform:scale(.4);transition:opacity .2s ease, transform .2s ease}
-.screen:hover .cursor{opacity:1;transform:none}
-.caption .role{font-family:var(--mono);font-size:12px;color:var(--gold)}
-.caption p{font-size:17px;color:#D6D1C9;min-height:3.2em}
+/* 01 Statement */
+.intro-s{padding-top:120px;padding-bottom:140px}
+.statement{grid-column:1/12;font-weight:300;font-size:clamp(32px,4.6vw,76px);line-height:1.04;letter-spacing:-.018em;margin-top:56px}
+.statement em{font-style:italic}
+.statement .w{transition:opacity .25s linear}
+.pill{display:inline-block;width:1.5em;height:.82em;vertical-align:-.04em;margin:0 .06em;overflow:hidden;border-radius:.41em}
+.facts{grid-column:7/13;margin-top:96px;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--g)}
+.facts div{border-top:1px solid var(--ink);padding-top:12px}
+.facts strong{display:block;font-family:var(--sans);font-stretch:62%;font-weight:800;font-size:clamp(44px,5vw,80px);line-height:.9;margin:14px 0 8px}
+.facts span{font-size:15px;line-height:1.35;display:block}
 
-/* Film strip */
-.stripwrap{position:relative;height:1700px;view-timeline-name:--strip;background:#060607}
-.stripstick{position:sticky;top:0;height:720px;max-height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:34px}
-.strip{display:flex;gap:22px;width:max-content;padding-left:calc(var(--gutter-l) + 2vw)}
-.strip img{height:min(380px,48svh);width:auto;max-width:none;object-fit:cover;border:10px solid var(--ink-3)}
+/* 02 Selected work: asymmetric, editorial */
+.work{padding-bottom:120px}
+.work .big{font-size:clamp(88px,17vw,300px);margin:36px 0 80px;display:flex;justify-content:space-between;align-items:flex-start}
+.work .big sup{font-family:var(--serif);font-style:italic;font-weight:300;font-size:.16em;text-transform:none;letter-spacing:0;line-height:1;margin-top:.25em}
+.items{row-gap:clamp(72px,10vw,150px)}
+.it{display:block;cursor:pointer}
+.it .media{position:relative;overflow:hidden;background:var(--ink)}
+.it .cap{display:grid;grid-template-columns:3.2em 1fr;margin-top:16px;gap:0 8px}
+.it .cap .lab{padding-top:.5em}
+.it h3{font-family:var(--sans);font-stretch:100%;font-weight:700;font-size:clamp(20px,2vw,32px);line-height:1.04;letter-spacing:-.02em;max-width:17em}
+.it h3 u{text-decoration:none;background:linear-gradient(var(--red),var(--red)) 0 100%/0 2px no-repeat;transition:background-size .6s var(--ease)}
+.it:hover h3 u{background-size:100% 2px}
+.it .meta{grid-column:2;margin-top:10px}
+.it .tag{position:absolute;z-index:2;top:12px;left:12px;color:var(--paper)}
+.i1{grid-column:1/9}.i1 .media{aspect-ratio:16/9}
+.i2{grid-column:10/13;align-self:end}.i2 .media{aspect-ratio:989/1399}
+.i3{grid-column:3/8}.i3 .media{aspect-ratio:4/5}
+.i4{grid-column:9/13;margin-top:40%}.i4 .media{aspect-ratio:16/10}
+.i5{grid-column:2/12}.i5 .media{aspect-ratio:2.39/1}
+.more{grid-column:1/13;display:flex;justify-content:flex-end;margin-top:20px}
+.lnk{font-family:var(--sans);font-stretch:62%;font-weight:800;text-transform:uppercase;font-size:clamp(36px,4vw,64px);line-height:.9;display:inline-flex;gap:.25em;align-items:center}
+.lnk .ar{display:inline-block;transition:transform .5s var(--ease)}
+.lnk:hover .ar{transform:translateX(.25em)}
 
-/* Services */
-.services{background:var(--ink-2)}
-.svc-wrap{display:flex;flex-wrap:wrap;gap:56px}
-.svc-intro{flex:1 1 300px;min-width:0}
-.svc-list{flex:2 1 520px;min-width:0;border-top:1px solid var(--line)}
-.svc{position:relative;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding:26px 0;border-bottom:1px solid var(--line);color:var(--paper);text-decoration:none}
-.svc .name{font-family:var(--display);font-size:clamp(28px,3vw,38px)}
-.svc .price{color:var(--gold);align-self:center;font-size:15px}
-.svc .price span{display:inline-block;transition:transform .35s ease}
-.svc::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
-.svc:hover::after,.svc:focus-visible::after{transform:scaleX(1)}
-.svc:hover .price span{transform:translateX(8px)}
+/* 03 Index: text-only list over a changing projection */
+.index{background:var(--ink);color:var(--paper);padding-bottom:100px;min-height:100vh;overflow:hidden}
+.index .shead{border-color:rgba(234,229,219,.3)}
+.proj{position:absolute;inset:0;pointer-events:none}
+.proj .ly{position:absolute;inset:0;opacity:0;transition:opacity .7s var(--ease)}
+.proj .ly.on{opacity:.42}
+.proj::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,transparent 20%,rgba(19,18,17,.6))}
+.index .wrap{position:relative;z-index:2}
+.filters{display:flex;gap:22px;flex-wrap:wrap;padding:6px 0 40px}
+.filters button{opacity:.45;transition:opacity .3s}
+.filters button.on,.filters button:hover{opacity:1}
+.filters sup{font-size:8px;margin-left:2px}
+.rows{list-style:none;border-bottom:1px solid rgba(234,229,219,.18)}
+.row{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--g);align-items:center;border-top:1px solid rgba(234,229,219,.18);padding:10px 0 6px;cursor:pointer;transition:opacity .45s var(--ease)}
+.rows.hov .row{opacity:.28}
+.rows.hov .row.on{opacity:1}
+.row .no{grid-column:1/2;font-variant-numeric:tabular-nums}
+.row.on .no{color:var(--red)}
+.row h3{grid-column:2/8;font-size:clamp(40px,6.4vw,108px);transition:transform .6s var(--ease)}
+.row.on h3{transform:translateX(.12em)}
+.row .ct{grid-column:8/10}
+.row .rl{grid-column:10/13;text-align:right}
+.row.hide{display:none}
+.nowline{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--g);margin-top:28px;align-items:start}
+.nowline p{grid-column:7/12;font-style:italic;font-weight:300;font-size:clamp(20px,1.8vw,28px);line-height:1.2;min-height:2.5em}
 
-/* About */
-.about{display:flex;flex-wrap:wrap;gap:60px;align-items:center}
-.about .pic{flex:1 1 320px;max-width:500px;aspect-ratio:4/5;overflow:hidden}
-.about .pic img{width:100%;height:115%;object-fit:cover}
-.about .txt{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:22px;max-width:620px}
-.about h2{font-size:clamp(40px,5vw,64px)}
-.about p{color:#D6D1C9;font-size:17px}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;border-top:1px solid var(--line);padding-top:18px}
-.facts b{display:block;font-family:var(--display);font-size:34px;font-weight:500;color:var(--paper)}
-.facts span{font-size:13px;color:var(--muted)}
+/* 04 Services: a rate card */
+.svc{padding-bottom:140px}
+.svc .grid{margin-top:48px}
+.svc .side{grid-column:1/5;position:sticky;top:90px;align-self:start}
+.svc .side h2{font-weight:300;font-style:italic;font-size:clamp(36px,3.8vw,60px);line-height:1;letter-spacing:-.02em}
+.svc .side p{margin-top:22px;max-width:22em;font-size:17px}
+.rate{grid-column:6/13;list-style:none}
+.rate li{position:relative;display:grid;grid-template-columns:3em 1fr 7em;gap:0 16px;padding:22px 12px 20px;border-top:1px solid var(--ink);align-items:baseline;isolation:isolate}
+.rate li:last-child{border-bottom:1px solid var(--ink)}
+.rate li::before{content:"";position:absolute;inset:0;background:var(--red);transform:scaleY(0);transform-origin:bottom;transition:transform .55s var(--ease);z-index:-1}
+.rate li:hover::before{transform:scaleY(1)}
+.rate li:hover{color:var(--paper)}
+.rate li:hover .mute{color:var(--paper)}
+.rate h3{font-family:var(--sans);font-weight:700;font-size:clamp(20px,1.9vw,28px);letter-spacing:-.02em;line-height:1.05}
+.rate p{grid-column:2;font-size:16px;margin-top:6px;max-width:30em}
+.rate .pr{grid-row:1;grid-column:3;text-align:right;font-family:var(--sans);font-stretch:62%;font-weight:800;font-size:clamp(24px,2.2vw,34px);text-transform:uppercase;line-height:1}
+.rate .pr small{display:block;font-family:var(--sans);font-stretch:125%;font-size:9px;font-weight:600;letter-spacing:.06em;margin-bottom:4px}
 
-/* Process */
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:30px}
-.steps li{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--gold);padding-top:18px}
-.steps b{font-family:var(--display);font-size:28px;font-weight:500}
-.steps p{color:var(--muted);font-size:15px}
+/* 05 About: end credits */
+.about{background:var(--paper-2);padding-bottom:140px}
+.about .grid{margin-top:48px;align-items:start}
+.portrait{grid-column:1/6}
+.portrait .media{aspect-ratio:1188/1400;overflow:hidden}
+.portrait figcaption{margin-top:10px;display:flex;justify-content:space-between}
+.bio{grid-column:7/13}
+.bio h2{font-weight:300;font-size:clamp(40px,4.6vw,76px);line-height:.98;letter-spacing:-.025em}
+.bio h2 em{font-style:italic}
+.bio>p{margin-top:28px;max-width:30em;font-size:19px}
+.credits{margin-top:64px;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}
+.credits dt{text-align:right;color:var(--mute);padding-top:.35em}
+.credits dd{font-family:var(--serif);font-stretch:100%;font-weight:400;text-transform:none;letter-spacing:0;font-size:19px;line-height:1.3}
+.steps{grid-column:1/13;margin-top:120px;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--g)}
+.steps div{border-top:1px solid var(--ink);padding-top:14px}
+.steps h4{font-family:var(--sans);font-weight:700;font-size:20px;letter-spacing:-.01em;margin:26px 0 6px}
+.steps p{font-size:16px;max-width:18em}
 
-/* Quote */
-.quote{border-block:1px solid var(--line);text-align:center}
-.quote blockquote{margin:0 auto;max-width:900px;font-family:var(--display);font-style:italic;font-size:clamp(28px,3.6vw,44px);line-height:1.25}
-.quote figcaption{margin-top:20px}
+/* 06 Call to action over the city */
+.cta{height:120vh;min-height:640px;position:relative;color:var(--paper);overflow:hidden;background:var(--ink)}
+.cta video{position:absolute;inset:0}
+.cta::after{content:"";position:absolute;inset:0;background:rgba(19,18,17,.38)}
+.cta .in-t{position:sticky;top:0;height:100vh;z-index:2;display:flex;flex-direction:column;justify-content:space-between;padding:70px var(--g) var(--g)}
+.cta .fit{display:block;white-space:nowrap}
+.cta .row2{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.cta .row2 p{font-style:italic;font-weight:300;font-size:clamp(20px,1.8vw,28px);max-width:16em;line-height:1.2}
 
-/* Book */
-.book{position:relative;overflow:hidden;background:#000}
-.book video,.book .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
-.book .shade{position:absolute;inset:0;background:linear-gradient(180deg,var(--ink) 0%,rgba(10,10,11,.25) 40%,rgba(10,10,11,.9) 100%)}
-.book .wrap{position:relative;display:flex;flex-wrap:wrap;gap:56px;padding-block:clamp(90px,12vw,150px)}
-.book .say{flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:18px}
-.book h2{font-size:clamp(48px,6.4vw,88px)}
-.form{flex:1 1 420px;min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:18px;background:rgba(10,10,11,.72);backdrop-filter:blur(8px);padding:28px}
-.form label{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--muted)}
-.form .full{grid-column:1/-1}
-.form input,.form select,.form textarea{min-height:46px;background:transparent;border:0;border-bottom:1px solid #4A4A4F;color:var(--paper);font:inherit;font-size:16px;padding:6px 0}
-.form select{background:var(--ink)}
-.form .ok{grid-column:1/-1;color:var(--gold);min-height:1.5em}
+/* 07 Booking form */
+.book{background:var(--ink);color:var(--paper);padding-bottom:120px}
+.book .shead{border-color:rgba(234,229,219,.3)}
+.book .grid{margin-top:56px;align-items:start}
+.book .side{grid-column:1/5}
+.book .side a{font-size:clamp(20px,1.7vw,26px);border-bottom:1px solid rgba(234,229,219,.35);transition:border-color .3s}
+.book .side a:hover{border-color:var(--red)}
+.book .side dl{margin-top:48px;display:grid;gap:18px}
+.book .side dd{font-size:17px;margin-top:4px}
+form{grid-column:6/13;display:grid;grid-template-columns:1fr 1fr;gap:34px var(--g)}
+.f{display:flex;flex-direction:column;gap:10px}
+.f.w{grid-column:1/3}
+.f label,.f legend{color:var(--mute-d)}
+.f input,.f textarea{background:none;border:0;border-bottom:1px solid rgba(234,229,219,.35);color:var(--paper);font:300 24px/1.3 var(--serif);padding:6px 0 10px;outline:none;transition:border-color .3s;border-radius:0}
+.f textarea{resize:vertical;min-height:90px}
+.f input:focus,.f textarea:focus{border-color:var(--paper)}
+.f input::placeholder,.f textarea::placeholder{color:rgba(234,229,219,.3);font-style:italic}
+fieldset{border:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label{color:var(--paper);font-family:var(--sans);font-size:14px;font-weight:500;padding:9px 14px;border:1px solid rgba(234,229,219,.3);border-radius:999px;cursor:pointer;transition:background .3s,border-color .3s,color .3s}
+.chips label:hover{border-color:var(--paper)}
+.chips input:checked+label{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.chips input:focus-visible+label{outline:2px solid var(--red);outline-offset:2px}
+.send{grid-column:1/3;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(234,229,219,.35);padding-top:18px}
+.send button{font-family:var(--sans);font-stretch:62%;font-weight:800;text-transform:uppercase;font-size:clamp(40px,4.6vw,72px);line-height:.85;position:relative;padding:4px 10px 0;margin-right:-10px;isolation:isolate}
+.send button::before{content:"";position:absolute;inset:0;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease);z-index:-1}
+.send button:hover::before{transform:scaleX(1)}
+.sent{display:none;grid-column:1/3;font-style:italic;font-size:24px}
 
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;padding-block:36px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
-footer nav{display:flex;flex-wrap:wrap;gap:20px}
+/* Footer: the name, cropped by the edge of the page */
+.ft{background:var(--ink);color:var(--paper);padding:0 var(--g);overflow:hidden}
+.ft .meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:22px 0;border-top:1px solid rgba(234,229,219,.3)}
+.ft .meta div{display:flex;gap:24px}
+.ft .fit{display:block;white-space:nowrap;margin-bottom:-.16em;color:var(--paper)}
+
+/* Cursor label over film */
+.cur{position:fixed;left:0;top:0;z-index:60;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:var(--red);color:var(--paper);display:grid;place-items:center;pointer-events:none;transform:scale(0);transition:transform .35s var(--ease)}
+.cur.on{transform:scale(1)}
 
 /* Wix build notes (for Malik) */
-.wix{display:none;font-family:var(--mono);font-size:11px;line-height:1.5;color:#0A0A0B;background:#7FD1FF;padding:6px 10px;max-width:520px;position:relative;z-index:5}
-.show-wix .wix{display:block}
-.wixtoggle{position:fixed;right:calc(var(--gutter-r) + 8px);bottom:calc(env(safe-area-inset-bottom,0px) + 16px);z-index:70;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid #7FD1FF;background:rgba(10,10,11,.85);color:#7FD1FF;font:inherit;font-size:13px;cursor:pointer}
+.wix{display:none;font-family:var(--sans);font-size:12px;line-height:1.45;font-weight:500;background:#FFF6D6;color:#2A2416;border-left:3px solid var(--red);padding:10px 12px;margin:14px 0;max-width:560px;position:relative;z-index:5}
+.wix b{font-weight:800;letter-spacing:.04em}
+.notes-on .wix{display:block}
+.wixbtn{position:fixed;left:var(--g);bottom:var(--g);z-index:70;background:var(--paper);color:var(--ink);padding:10px 14px;border-radius:999px;box-shadow:0 0 0 1px rgba(19,18,17,.2)}
 
-/* Motion: everything is visible at rest; these only add movement. */
-@keyframes bars{from{height:50%}to{height:8%}}
-@keyframes rise{from{opacity:.001;transform:translateY(40px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
-@keyframes marquee{to{transform:translateX(-50%)}}
-@keyframes cue{50%{transform:translateY(8px)}}
-@keyframes heroOut{to{transform:scale(1.15);filter:brightness(.35)}}
-@keyframes strip{to{transform:translateX(calc(-100% + 100vw))}}
-@keyframes inview{from{opacity:.2;transform:translateY(50px)}to{opacity:1;transform:none}}
-@keyframes drift{from{transform:translateY(-8%)}to{transform:translateY(0)}}
-@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-@media (prefers-reduced-motion:no-preference){
-  .bar{animation:bars 1.2s cubic-bezier(.2,.7,.2,1) .2s both}
-  .hero .r1{animation:rise .9s cubic-bezier(.2,.7,.2,1) .7s both}
-  .hero .r2{animation:rise .9s cubic-bezier(.2,.7,.2,1) .9s both}
-  .hero .r3{animation:rise .9s cubic-bezier(.2,.7,.2,1) 1.1s both}
-  .hero .r4{animation:rise .9s cubic-bezier(.2,.7,.2,1) 1.3s both}
-  .marquee .track{animation:marquee 32s linear infinite}
-  .cue{animation:cue 1.8s ease-in-out infinite}
-  @supports (animation-timeline: view()){
-    .hero video,.hero .poster{animation:heroOut linear both;animation-timeline:scroll(root);animation-range:0 900px}
-    .strip{animation:strip linear both;animation-timeline:--strip;animation-range:contain 0% contain 100%}
-    .iv{animation:inview linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
-    .about .pic img{animation:drift linear both;animation-timeline:view()}
-    .steps li{transform-origin:left}
-  }
+@media (max-width:900px){
+  body{font-size:17px}
+  .hd{grid-template-columns:1fr auto}
+  .hd nav{display:none}
+  .hd .r .clock{display:none}
+  .hero{padding-top:48px}
+  .frame video{object-position:30% 50%}
+  .wixbtn{left:auto;right:var(--g);padding:8px 12px}
+  .frame .intro{flex-direction:column;align-items:flex-start}
+  .frame .intro p{text-align:left}
+  .shead .n{grid-column:1/5}.shead .t{grid-column:5/13}.shead .x{display:none}
+  .statement{grid-column:1/13}
+  .facts{grid-column:1/13;grid-template-columns:1fr 1fr 1fr;margin-top:64px}
+  .i1,.i2,.i3,.i4,.i5{grid-column:1/13;margin-top:0}
+  .i2{grid-column:4/13}.i3{grid-column:1/10}.i4{grid-column:3/13}
+  .row{grid-template-columns:2.4em 1fr auto;padding:12px 0 8px}
+  .row .no{grid-column:1}.row h3{grid-column:2;font-size:clamp(34px,10vw,64px)}.row .ct{grid-column:3;text-align:right}.row .rl{display:none}
+  .nowline p{grid-column:1/13}
+  .svc .side,.rate,.portrait,.bio,.book .side,form{grid-column:1/13;position:static}
+  .rate{margin-top:40px}
+  .rate li{grid-template-columns:2.2em 1fr 5.5em;padding:18px 4px}
+  .bio{margin-top:48px}
+  .credits{grid-template-columns:1fr 1.4fr}
+  .steps{grid-template-columns:1fr 1fr;margin-top:80px;row-gap:40px}
+  form{margin-top:56px;grid-template-columns:1fr}
+  .f.w,.send,.sent{grid-column:1}
+  .cur{display:none}
 }
-@media (prefers-reduced-motion:reduce){ .cursor{display:none} .screen{cursor:auto} }
-@media (max-width:720px){ .stripwrap{height:auto} .stripstick{position:static;height:auto;padding-block:72px} .strip{animation:none!important;overflow-x:auto;width:auto;max-width:100%;padding-right:16px} .strip img{height:220px} .nav{gap:14px} .cue{display:none} }
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .rv,.clip{opacity:1;transform:none;clip-path:none}
+  .name span b{transform:none}
+}
 </style>
 </head>
 <body>
 
-<header class="top" id="top">
-  <div class="wrap">
-    <a class="logo" href="#home">TYPERCEPTION</a>
-    <nav class="nav" aria-label="Main">
-      <a href="#work">Work</a><a href="#index">Index</a><a href="#services">Services</a><a href="#about">About</a>
-      <a class="btn btn-gold" href="#book">Book a shoot</a>
-    </nav>
-  </div>
+<header class="hd lab">
+  <a class="wm" href="#top">Typerception</a>
+  <nav><a href="#work">Work</a><a href="#index">Index</a><a href="#services">Services</a><a href="#about">About</a></nav>
+  <div class="r"><span class="clock tc" id="clock">Brooklyn --:--</span><a href="#book">Book a shoot</a></div>
 </header>
 
-<main id="home">
-  <section class="hero" aria-label="Showreel">
-    <img class="poster" src="media/hero_reel_p.jpg" alt="">
-    <video id="heroVid" class="auto" src="media/hero_reel.mp4" poster="media/hero_reel_p.jpg" muted loop playsinline preload="auto" aria-hidden="true"></video>
-    <div class="shade"></div><div class="bar t"></div><div class="bar b"></div>
-    <div class="wrap">
-      <p class="wix">WIX STUDIO: Section > Background > Video (upload the reel loop). Black bars = two strips with Entrance animation "Reveal". Headline: Entrance "Blur in" / "Slide up", staggered 0.2s. Video zoom-out on scroll: Scroll effect "Grow" + "Fade".</p>
-      <p class="eyebrow r1">Brooklyn, New York · Now showing</p>
-      <h1 class="r2">Stories that feel <em>real</em>, shot like cinema.</h1>
-      <p class="lede r3">Tyshawn Jamison is a filmmaker, cinematographer and SAG-AFTRA actor making films, documentaries, music videos and brand content.</p>
-      <div class="ctas r4"><a class="btn btn-gold" href="#index">Watch the work</a><a class="btn btn-ghost" href="#book">Book a shoot</a></div>
-    </div>
-    <div class="cue" aria-hidden="true">SCROLL<i></i></div>
-    <button class="pause" id="pauseBtn" type="button" aria-label="Pause background video"><svg width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="1" width="3" height="12" fill="currentColor"/><rect x="8" y="1" width="3" height="12" fill="currentColor"/></svg></button>
-  </section>
+<main id="top">
 
-  <div class="marquee" aria-label="Credits">
-    <div class="track">
-      <span>STREAMING ON AMAZON PRIME VIDEO</span><b>✦</b><span>WILD 'N OUT LIVE · BARCLAYS CENTER</span><b>✦</b><span>SAG-AFTRA</span><b>✦</b><span>FULL SAIL UNIVERSITY</span><b>✦</b><span>SHOT ON SONY FX6</span><b>✦</b>
-      <span aria-hidden="true">STREAMING ON AMAZON PRIME VIDEO</span><b aria-hidden="true">✦</b><span aria-hidden="true">WILD 'N OUT LIVE · BARCLAYS CENTER</span><b aria-hidden="true">✦</b><span aria-hidden="true">SAG-AFTRA</span><b aria-hidden="true">✦</b><span aria-hidden="true">FULL SAIL UNIVERSITY</span><b aria-hidden="true">✦</b><span aria-hidden="true">SHOT ON SONY FX6</span><b aria-hidden="true">✦</b>
+<!-- HERO -->
+<section class="hero" aria-label="Showreel">
+  <div class="frame">
+    <video id="reel" src="media/hero_reel.mp4" poster="media/hero_reel_p.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video>
+    <div class="top lab"><span>Showreel 2026 · Sound off</span><span class="tc" id="tc"><i></i>00:00:00:00</span></div>
+    <div class="bot">
+      <div class="intro">
+        <p>Filmmaker, cinematographer and SAG-AFTRA actor making films, documentaries, music videos and brand work in Brooklyn, New York.</p>
+        <span class="lab">Scroll</span>
+      </div>
+      <h1 class="cond name fit" data-fit><span><b>Tyshawn</b></span> <span><b>Jamison</b></span></h1>
     </div>
   </div>
+  <p class="wix"><b>WIX STUDIO</b> · Section with 28px padding on a black background; inside it, a Video Box (reel, muted, loop, autoplay). Name = one text box, Archivo Condensed ExtraBold, sized to span the frame. Entrance: "Reveal" from bottom, 1.2s. Timecode is decoration; skip it or use a small Velo timer.</p>
+</section>
 
-  <section class="band" id="work">
-    <div class="wrap">
-      <p class="wix">WIX STUDIO: Each card is a Video Box set to Play on hover (muted, loop). Grayscale-to-color = Hover interaction on the video box (Saturation/Brightness filter). Cards: Scroll effect "Fade in" + "Slide up".</p>
-      <div class="head iv"><h2>Selected work</h2><a href="#index">Full index →</a></div>
-      <div class="grid">
-        <a class="card wide iv" href="#index" data-pick="1">
-          <div class="frame"><video class="auto" src="media/wildnout.mp4" poster="media/wildnout_p.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video><span class="tag mono">BTS · 9:21</span></div>
-          <h3>Wild 'N Out Live, Backstage</h3><span class="meta">Behind-the-scenes documentary · Barclays Center</span>
-        </a>
-        <a class="card iv" href="#index" data-pick="2">
-          <div class="frame"><video class="auto" src="media/rehearsal.mp4" poster="media/rehearsal_p.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
-          <h3>The Rehearsal</h3><span class="meta">Narrative short · Writer, director, DP</span>
-        </a>
-        <a class="card iv" href="#index" data-pick="5">
-          <div class="frame"><video class="auto" src="media/lighting.mp4" poster="media/lighting_p.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
-          <h3>Lighting Studies</h3><span class="meta">Beauty · Dramatic · Comedy · Suspense</span>
-        </a>
-        <a class="card iv" href="#index" data-pick="6">
-          <div class="frame"><video class="auto" src="media/studio.mp4" poster="media/studio_p.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
-          <h3>Typerception Studio</h3><span class="meta">Behind the scenes · Sony FX6</span>
-        </a>
-      </div>
+<!-- 01 STATEMENT -->
+<section class="intro-s wrap" aria-label="Introduction">
+  <div class="shead lab"><span class="n">01</span><span class="t">Introduction</span><span class="x">Brooklyn, New York</span></div>
+  <div class="grid">
+    <p class="statement" id="statement">Tyshawn Jamison makes films <span class="pill"><video src="media/rehearsal.mp4" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video></span> that feel <em>lived in.</em> An actor who directs from inside the scene <span class="pill"><img src="media/portrait.jpg" alt=""></span> and a cinematographer who lights it <span class="pill"><video src="media/lighting.mp4" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video></span> with intention.</p>
+    <div class="facts">
+      <div class="rv"><span class="lab">Distribution</span><strong>03</strong><span>Short films streaming on Amazon Prime Video</span></div>
+      <div class="rv"><span class="lab">Camera</span><strong>FX6</strong><span>Sony full-frame cinema capture, lit on set</span></div>
+      <div class="rv"><span class="lab">Union</span><strong>SAG</strong><span>SAG-AFTRA actor, Full Sail University graduate</span></div>
     </div>
-  </section>
+  </div>
+  <p class="wix"><b>WIX STUDIO</b> · Statement = one rich-text box in Newsreader Light. The small rounded clips are separate Video Boxes placed in the line breaks of a flex row (or drop them on mobile). Scroll effect on the text: "Reveal" by line. Facts row = 3 text boxes, Entrance "Fade in" with 0.15s stagger.</p>
+</section>
 
-  <section class="band" id="index" style="background:var(--ink-2)">
-    <div class="wrap">
-      <p class="wix">WIX STUDIO + VELO: List = Repeater connected to a "Projects" CMS collection. Preview = Multi-State Box (one state per project). Velo: repeater item onMouseIn → changeState(); filter chips → dataset.setFilter(). Cursor circle: Studio Mouse effect, or skip on Wix.</p>
-      <div class="head iv"><h2>The index</h2><p class="mono">HOVER A TITLE · TAP ON PHONES</p></div>
-      <div class="index">
-        <div class="list">
-          <div class="filters" role="group" aria-label="Filter projects">
-            <button class="chip" type="button" data-f="All" aria-pressed="true">All</button>
-            <button class="chip" type="button" data-f="Film" aria-pressed="false">Film</button>
-            <button class="chip" type="button" data-f="Documentary" aria-pressed="false">Documentary</button>
-            <button class="chip" type="button" data-f="Live" aria-pressed="false">Live</button>
-            <button class="chip" type="button" data-f="Craft" aria-pressed="false">Craft</button>
-          </div>
-          <div id="rows"></div>
+<!-- 02 SELECTED WORK -->
+<section class="work wrap" id="work" aria-label="Selected work">
+  <div class="shead lab"><span class="n">02</span><span class="t">Selected work</span><span class="x">Film · Documentary · Live</span></div>
+  <h2 class="cond big"><span>Selected</span><sup>(05)</sup></h2>
+  <div class="grid items">
+    <a class="it i1" data-cur="Play" href="#index" data-open="1">
+      <div class="media clip"><video class="m" src="media/wildnout.mp4" poster="media/wildnout_p.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
+      <div class="cap"><span class="lab">01</span><h3><u>Backstage at Barclays Center</u> for Wild 'N Out Live.</h3><span class="lab mute meta">Event documentary · 9:21</span></div>
+    </a>
+    <a class="it i2" data-cur="View" href="#index" data-open="3">
+      <div class="media clip"><img class="m" src="media/deception-poster.jpg" alt="Poster for the short film Deception"></div>
+      <div class="cap"><span class="lab">02</span><h3><u>Deception,</u> now streaming on Prime Video.</h3><span class="lab mute meta">Writer · Director · Producer</span></div>
+    </a>
+    <a class="it i3" data-cur="Play" href="#index" data-open="2">
+      <div class="media clip"><video class="m" src="media/rehearsal.mp4" poster="media/rehearsal_p.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
+      <div class="cap"><span class="lab">03</span><h3><u>The Rehearsal,</u> where the lines get personal.</h3><span class="lab mute meta">Narrative short · Writer, director, DP</span></div>
+    </a>
+    <a class="it i4" data-cur="View" href="#index" data-open="4">
+      <div class="media clip"><img class="m" src="media/susan.jpg" alt="Susan Oludele during her documentary interview"></div>
+      <div class="cap"><span class="lab">04</span><h3><u>Susan Oludele,</u> from her first chair to celebrity hairstylist.</h3><span class="lab mute meta">Documentary portrait</span></div>
+    </a>
+    <a class="it i5" data-cur="Play" href="#index" data-open="5">
+      <div class="media clip"><video class="m" src="media/lighting.mp4" poster="media/lighting_p.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
+      <div class="cap"><span class="lab">05</span><h3><u>Lighting studies:</u> one face, four moods.</h3><span class="lab mute meta">Cinematography · Beauty, drama, comedy, suspense</span></div>
+    </a>
+    <div class="more"><a class="lnk" href="#index">Full index <span class="ar">&rarr;</span></a></div>
+  </div>
+  <p class="wix"><b>WIX STUDIO</b> · Use a 12-column CSS grid section and place each project by hand at a different width and offset (8 cols, 3 cols, 5 cols, 4 cols, 10 cols). Media: Video Box set to autoplay muted. Entrance animation "Reveal" (bottom) plus Scroll effect "Shrink" on the inner video. Caption underline = Hover interaction on the title.</p>
+</section>
+
+<!-- 03 INDEX -->
+<section class="index" id="index" aria-label="Project index">
+  <div class="proj" id="proj" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="shead lab"><span class="n">03</span><span class="t">Index</span><span class="x" id="hint">Hover a title</span></div>
+    <div class="filters lab" id="filters"></div>
+    <ol class="rows" id="rows"></ol>
+    <div class="nowline"><span class="lab" style="grid-column:1/7" id="nowrole"></span><p id="nowline"></p></div>
+    <p class="wix"><b>WIX STUDIO + VELO</b> · Repeater connected to a "Projects" CMS collection (title, category, role, line, clip). Background = Multi-State Box, one state per project, each holding a Video Box. Velo: repeater item onMouseIn → changeState(); filter labels → dataset.setFilter(). Other rows dim with a Hover interaction on the repeater.</p>
+  </div>
+</section>
+
+<!-- 04 SERVICES -->
+<section class="svc wrap" id="services" aria-label="Services">
+  <div class="shead lab"><span class="n">04</span><span class="t">Services</span><span class="x">Booked through Wix Bookings</span></div>
+  <div class="grid">
+    <div class="side">
+      <h2>From the first call to the final grade.</h2>
+      <p>Every project gets creative direction, cinema-camera capture and a finished edit. Larger productions get a written quote within a day.</p>
+    </div>
+    <ol class="rate">
+      <li><span class="lab">01</span><h3>Film &amp; brand production</h3><span class="pr"><small>From</small>$1,000</span><p class="mute">Concept, shoot, edit and color for campaigns and branded stories.</p></li>
+      <li><span class="lab">02</span><h3>Music videos</h3><span class="pr"><small>From</small>$500</span><p class="mute">Treatment, performance and narrative coverage, lit for the song.</p></li>
+      <li><span class="lab">03</span><h3>Documentary &amp; podcast</h3><span class="pr"><small>Rate</small>Quote</span><p class="mute">Multi-camera interviews and verité coverage, cut into a story.</p></li>
+      <li><span class="lab">04</span><h3>Events &amp; live streaming</h3><span class="pr"><small>Rate</small>Quote</span><p class="mute">Backstage access, recap films and live switching.</p></li>
+      <li><span class="lab">05</span><h3>Self-tapes &amp; actor reels</h3><span class="pr"><small>Rate</small>Quote</span><p class="mute">Directed by a working SAG-AFTRA actor, read by one too.</p></li>
+      <li><span class="lab">06</span><h3>Portrait &amp; product photography</h3><span class="pr"><small>Rate</small>Quote</span><p class="mute">Studio and location stills with the same lighting approach.</p></li>
+    </ol>
+  </div>
+  <p class="wix"><b>WIX STUDIO</b> · Left column: pin with "Sticky" in the section layout. Each rate row = a container linked to its Wix Bookings service page. Red fill on hover = Hover interaction on the container (background color, 0.5s). Replace "Quote" with real starting prices when Ty has them.</p>
+</section>
+
+<!-- 05 ABOUT -->
+<section class="about wrap" id="about" aria-label="About">
+  <div class="shead lab"><span class="n">05</span><span class="t">About</span><span class="x">Director's statement</span></div>
+  <div class="grid">
+    <figure class="portrait">
+      <div class="media clip"><img class="m" src="media/portrait.jpg" alt="Portrait of Tyshawn Jamison"></div>
+      <figcaption class="lab"><span>Fig. 1</span><span class="mute">Tyshawn Jamison</span></figcaption>
+    </figure>
+    <div class="bio">
+      <h2 class="rv">An actor's eye, <em>behind</em> the camera.</h2>
+      <p class="rv">I'm Tyshawn Jamison, a Brooklyn filmmaker and storyteller. Years in front of the lens taught me what a performer needs, so I direct from inside the scene and light it with intention. Typerception is the studio I built to make that work for artists, brands and other filmmakers.</p>
+      <dl class="credits lab rv">
+        <dt>Written &amp; directed by</dt><dd>Tyshawn Jamison</dd>
+        <dt>Union</dt><dd>SAG-AFTRA</dd>
+        <dt>Training</dt><dd>Full Sail University</dd>
+        <dt>Camera</dt><dd>Sony FX6</dd>
+        <dt>Distribution</dt><dd>Amazon Prime Video</dd>
+        <dt>Based in</dt><dd>Brooklyn, New York</dd>
+      </dl>
+    </div>
+    <div class="steps">
+      <div class="rv"><span class="lab">Step 01</span><h4>Consult</h4><p>A short call on the story, the audience and the budget.</p></div>
+      <div class="rv"><span class="lab">Step 02</span><h4>Pre-production</h4><p>Script, shot list, locations and a lighting plan.</p></div>
+      <div class="rv"><span class="lab">Step 03</span><h4>Shoot</h4><p>Cinema-camera capture, lighting and clean sound.</p></div>
+      <div class="rv"><span class="lab">Step 04</span><h4>Deliver</h4><p>Cut, color and mix, delivered for every platform.</p></div>
+    </div>
+  </div>
+  <p class="wix"><b>WIX STUDIO</b> · Credits = two text columns (right-aligned labels, left-aligned names), like end credits. Portrait: Entrance "Reveal" + Scroll effect "Parallax" at 20%.</p>
+</section>
+
+<!-- 06 CTA -->
+<section class="cta" aria-label="Start a project">
+  <video src="media/drone.mp4" poster="media/drone_p.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video>
+  <div class="in-t">
+    <span class="lab">06 · Brooklyn at golden hour, shot by Typerception</span>
+    <div>
+      <span class="cond fit" data-fit>Have a story</span>
+      <span class="cond fit" data-fit>worth telling?</span>
+      <div class="row2" style="margin-top:22px"><p>Tell me about it. I reply within a day.</p><a class="lab" href="#book">Start a project &darr;</a></div>
+    </div>
+  </div>
+  <p class="wix" style="position:absolute;bottom:0;left:var(--g);z-index:3"><b>WIX STUDIO</b> · Section with a video background (drone clip) and a dark overlay at 38%. The two headline lines stretch edge to edge; set the text to fill the width at each breakpoint.</p>
+</section>
+
+<!-- 07 BOOKING -->
+<section class="book wrap" id="book" aria-label="Book a shoot">
+  <div class="shead lab"><span class="n">07</span><span class="t">Book a shoot</span><span class="x">Reply within a day</span></div>
+  <div class="grid">
+    <div class="side">
+      <a href="mailto:Tyshawn.Jamison@ty-perception.com">Tyshawn.Jamison@ty-perception.com</a>
+      <dl>
+        <div><dt class="lab mute">Studio</dt><dd>Brooklyn, New York. Travel available.</dd></div>
+        <div><dt class="lab mute">Follow</dt><dd><a href="#" style="border:0">Instagram</a> · <a href="#" style="border:0">YouTube</a> · <a href="#" style="border:0">TikTok</a></dd></div>
+      </dl>
+    </div>
+    <form id="form" novalidate>
+      <div class="f"><label class="lab" for="n">Your name</label><input id="n" name="name" autocomplete="name" placeholder="First and last"></div>
+      <div class="f"><label class="lab" for="e">Email</label><input id="e" name="email" type="email" autocomplete="email" placeholder="you@studio.com"></div>
+      <fieldset class="f w"><legend class="lab">Project</legend>
+        <div class="chips">
+          <input type="radio" name="type" id="t1" checked><label for="t1">Music video</label>
+          <input type="radio" name="type" id="t2"><label for="t2">Film or brand</label>
+          <input type="radio" name="type" id="t3"><label for="t3">Documentary</label>
+          <input type="radio" name="type" id="t4"><label for="t4">Event</label>
+          <input type="radio" name="type" id="t5"><label for="t5">Actor reel</label>
         </div>
-        <figure class="preview" style="margin:0">
-          <div class="screen" id="screen"><span class="counter mono" id="counter">01 / 08</span><span class="cursor" id="cursor" aria-hidden="true">PLAY</span></div>
-          <figcaption class="caption"><span class="role" id="role"></span><p id="line"></p></figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="stripwrap" aria-label="Contact sheet">
-    <div class="stripstick">
-      <div class="wrap"><p class="wix">WIX STUDIO: Horizontal scroll = a Pro Gallery "Slider" or a horizontally scrolling Repeater. Pinned scroll-linked sliding needs a Wix Studio scroll animation on the gallery strip (Move horizontally) or a custom code embed.</p>
-      <div class="head" style="margin:0"><h2>The contact sheet</h2><p class="mono">KEEP SCROLLING →</p></div></div>
-      <div class="strip">
-        <img src="media/rehearsal-still.jpg" alt="Actor in low-key light, still from The Rehearsal">
-        <img src="media/deception-poster.jpg" alt="Poster for the short film Deception">
-        <img src="media/susan.jpg" alt="Celebrity hairstylist Susan Oludele during her documentary interview">
-        <img src="media/painter.jpg" alt="Painter seated in front of a large red portrait">
-        <img src="media/window.jpg" alt="Man in a winter jacket looking out a high-rise window">
-        <img src="media/plaid.jpg" alt="Man in a plaid shirt in dramatic low light">
-        <img src="media/drone_p.jpg" alt="Aerial view of Brooklyn at golden hour">
-      </div>
-    </div>
-  </section>
-
-  <section class="band services" id="services">
-    <div class="wrap svc-wrap">
-      <div class="svc-intro iv">
-        <p class="wix">WIX STUDIO: Rows = buttons/links to each Wix Bookings service page. Gold underline + arrow nudge = Hover interactions.</p>
-        <h2 style="font-size:clamp(44px,6vw,80px);margin-bottom:18px">Services</h2>
-        <p style="color:var(--muted);max-width:380px">From concept to final grade. Every project gets creative direction, cinema-camera capture and a finished edit. Bigger projects get a custom quote within [24 hours].</p>
-      </div>
-      <div class="svc-list">
-        <a class="svc iv" href="#book"><span class="name">Film &amp; brand production</span><span class="price">From $1,000 <span>→</span></span></a>
-        <a class="svc iv" href="#book"><span class="name">Music videos</span><span class="price">From $500 <span>→</span></span></a>
-        <a class="svc iv" href="#book"><span class="name">Documentary &amp; podcast</span><span class="price">From [PRICE] <span>→</span></span></a>
-        <a class="svc iv" href="#book"><span class="name">Events &amp; live streaming</span><span class="price">From [PRICE] <span>→</span></span></a>
-        <a class="svc iv" href="#book"><span class="name">Self-tapes &amp; actor reels</span><span class="price">From [PRICE] <span>→</span></span></a>
-        <a class="svc iv" href="#book"><span class="name">Product &amp; portrait photography</span><span class="price">From [PRICE] <span>→</span></span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="about">
-    <div class="wrap about">
-      <div class="pic iv"><img src="media/portrait.jpg" alt="Portrait of filmmaker Tyshawn Jamison"></div>
-      <div class="txt iv">
-        <p class="wix">WIX STUDIO: Portrait = Scroll effect "Parallax". Text block = Entrance "Fade in".</p>
-        <p class="eyebrow">The director</p>
-        <h2>An actor's eye behind the camera.</h2>
-        <p>I'm Tyshawn Jamison, a Brooklyn-based filmmaker and storyteller. As a SAG-AFTRA actor and a Full Sail University cinematography graduate, I direct performances from the inside and light them with intention.</p>
-        <div class="facts">
-          <div><b>3</b><span>Short films on Amazon Prime Video</span></div>
-          <div><b>FX6</b><span>Sony full-frame cinema camera</span></div>
-          <div><b>NYC</b><span>Brooklyn based, travel available</span></div>
+      </fieldset>
+      <fieldset class="f w"><legend class="lab">Budget</legend>
+        <div class="chips">
+          <input type="radio" name="b" id="b1"><label for="b1">Under $1,000</label>
+          <input type="radio" name="b" id="b2" checked><label for="b2">$1,000 to $2,500</label>
+          <input type="radio" name="b" id="b3"><label for="b3">$2,500+</label>
         </div>
-      </div>
-    </div>
-  </section>
+      </fieldset>
+      <div class="f w"><label class="lab" for="m">About the project</label><textarea id="m" name="msg" rows="3" placeholder="A two-location music video in Brooklyn, shooting in March."></textarea></div>
+      <div class="send"><span class="lab mute">Sample form. Nothing is sent.</span><button type="submit">Send &rarr;</button></div>
+      <p class="sent" id="sent">Thank you. On the live site this goes straight to Ty's inbox.</p>
+    </form>
+  </div>
+  <p class="wix"><b>WIX STUDIO</b> · Wix Forms with underline-only inputs (border bottom 1px, no fill). Project and budget = single-choice fields styled as pill buttons. Submissions go to Wix Inbox and email.</p>
+</section>
 
-  <section class="band" style="padding-top:0">
-    <div class="wrap">
-      <div class="head iv"><h2>How a project runs</h2></div>
-      <ol class="steps">
-        <li class="iv"><span class="mono">STEP 1</span><b>Consult</b><p>A short call on the story, audience and budget.</p></li>
-        <li class="iv"><span class="mono">STEP 2</span><b>Pre-production</b><p>Script, shot list, locations and lighting plan.</p></li>
-        <li class="iv"><span class="mono">STEP 3</span><b>Shoot</b><p>Sony FX6 capture, lighting and clean audio.</p></li>
-        <li class="iv"><span class="mono">STEP 4</span><b>Edit &amp; deliver</b><p>Cut, color and sound, delivered for every platform.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <figure class="band quote" style="margin:0">
-    <div class="wrap">
-      <blockquote class="iv">“[Client testimonial: one or two sentences about working with Tyshawn.]”</blockquote>
-      <figcaption class="mono">[CLIENT NAME] · [PROJECT]</figcaption>
-    </div>
-  </figure>
-
-  <section class="book" id="book" aria-label="Book a shoot">
-    <img class="poster" src="media/drone_p.jpg" alt="">
-    <video class="auto" src="media/drone.mp4" poster="media/drone_p.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video>
-    <div class="shade"></div>
-    <div class="wrap">
-      <div class="say iv">
-        <p class="wix">WIX STUDIO: Section video background (Brooklyn aerial). Form = Wix Forms with custom fields (project type, budget, date). Submissions go to Wix Inbox / email.</p>
-        <h2>Have a story to tell?</h2>
-        <p style="color:#D6D1C9;font-size:17px">Tell me about the project and I'll reply within [24 hours].</p>
-        <p class="mono">Tyshawn.Jamison@ty-perception.com</p>
-      </div>
-      <form class="form iv" id="inq" novalidate>
-        <label for="f-name">Name<input id="f-name" type="text" autocomplete="name" value="Jordan Lee"></label>
-        <label for="f-email">Email<input id="f-email" type="email" autocomplete="email" value="jordan@example.com"></label>
-        <label for="f-type">Project type<select id="f-type"><option selected>Music video</option><option>Film or brand</option><option>Documentary or podcast</option><option>Event</option><option>Actor reel or self-tape</option></select></label>
-        <label for="f-budget">Budget<select id="f-budget"><option>Under $1,000</option><option selected>$1,000 to $2,500</option><option>$2,500+</option></select></label>
-        <label class="full" for="f-msg">About the project<textarea id="f-msg" rows="3">Example: two-location music video in Brooklyn, shooting in March.</textarea></label>
-        <button class="btn btn-gold" type="submit" style="justify-self:start">Send inquiry</button>
-        <p class="ok" id="ok" role="status"></p>
-      </form>
-    </div>
-  </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <span>© 2026 Typerception LLC · Brooklyn, NY · Sample redesign, not the live site</span>
-    <nav aria-label="Social"><a href="https://www.instagram.com/typerception">Instagram</a><a href="https://www.youtube.com/@Typerception">YouTube</a><a href="https://www.tiktok.com/@tyshawn.jamison">TikTok</a><a href="https://www.linkedin.com/in/tyshawn-jamison-35a69788/">LinkedIn</a></nav>
-  </div>
+<footer class="ft">
+  <div class="meta lab"><span>&copy; 2026 Typerception LLC · Sample redesign, not the live site</span><div><a href="#top">Back to top &uarr;</a></div></div>
+  <span class="cond fit" data-fit>Typerception</span>
 </footer>
 
-<button class="wixtoggle" id="wixToggle" type="button" aria-pressed="false">Show Wix build notes</button>
+<div class="cur lab" id="cur">Play</div>
+<button class="wixbtn lab" id="wixbtn" aria-pressed="false">Show Wix notes</button>
 
 <script>
 (function(){
-  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  // Autoplay muted loops (posters stay when motion is reduced)
-  var vids = Array.prototype.slice.call(document.querySelectorAll('video.auto'));
-  function play(v){ v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function(){}); }
-  if (!reduce) {
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function(es){ es.forEach(function(e){ e.isIntersecting ? play(e.target) : e.target.pause(); }); }, {rootMargin:'200px'});
-      vids.forEach(function(v){ io.observe(v); });
-    } else { vids.forEach(play); }
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = matchMedia('(pointer:fine)').matches;
+
+  /* Fit headline text to its container width */
+  function fit(){
+    document.querySelectorAll('[data-fit]').forEach(function(el){
+      el.style.fontSize = '100px'; el.style.display = 'inline-block';
+      var cs = getComputedStyle(el.parentElement);
+      var w = el.parentElement.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      var s = el.getBoundingClientRect().width;
+      el.style.display = '';
+      el.style.fontSize = (100 * w / s * 0.995) + 'px';
+    });
   }
-  var hero = document.getElementById('heroVid'), pb = document.getElementById('pauseBtn');
-  pb.addEventListener('click', function(){
-    if (hero.paused) { play(hero); pb.setAttribute('aria-label','Pause background video'); }
-    else { hero.pause(); pb.setAttribute('aria-label','Play background video'); }
+  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(function(){
+    fit(); requestAnimationFrame(function(){ document.body.classList.add('loaded'); });
   });
+  addEventListener('resize', fit);
 
-  // Header turns solid after the hero
-  var top = document.getElementById('top');
-  function onScroll(){ top.classList.toggle('solid', window.scrollY > 120); }
-  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  /* Brooklyn clock */
+  var clock = document.getElementById('clock');
+  var fmt = new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit',hour12:false});
+  function tick(){ clock.textContent = 'Brooklyn ' + fmt.format(new Date()); }
+  tick(); setInterval(tick, 15000);
 
-  // Project index
+  /* Timecode from the reel */
+  var reel = document.getElementById('reel'), tc = document.getElementById('tc');
+  function pad(n){ return (n<10?'0':'') + n; }
+  (function loop(){
+    var t = reel.currentTime || 0, f = Math.floor((t%1)*24), s = Math.floor(t);
+    tc.lastChild.nodeValue = '00:00:' + pad(s) + ':' + pad(f);
+    requestAnimationFrame(loop);
+  })();
+
+  /* Play videos only when on screen */
+  var vio = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      var v = e.target;
+      if (e.isIntersecting && !reduce) { v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+      else v.pause();
+    });
+  }, {threshold:.15});
+  document.querySelectorAll('main video').forEach(function(v){ v.muted = true; vio.observe(v); });
+
+  /* Reveals */
+  var rio = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+  /* clip-path hides the box from the observer, so watch its parent instead */
+  document.querySelectorAll('.rv').forEach(function(el){
+    var sib = el.parentElement.querySelectorAll(':scope > .rv');
+    var idx = Array.prototype.indexOf.call(sib, el);
+    if (idx > 0) el.style.transitionDelay = (idx * 0.12) + 's';
+    rio.observe(el);
+  });
+  var cio = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting) { e.target.querySelectorAll(':scope > .clip').forEach(function(c){ c.classList.add('in'); }); cio.unobserve(e.target); } });
+  }, {threshold:.1});
+  document.querySelectorAll('.clip').forEach(function(el){ cio.observe(el.parentElement); });
+
+  /* Statement: words brighten as you read down the page */
+  var st = document.getElementById('statement');
+  (function split(node){
+    Array.prototype.slice.call(node.childNodes).forEach(function(c){
+      if (c.nodeType === 3) {
+        var frag = document.createDocumentFragment();
+        c.nodeValue.split(/(\s+)/).forEach(function(part){
+          if (!part) return;
+          if (/^\s+$/.test(part)) frag.appendChild(document.createTextNode(part));
+          else { var s = document.createElement('span'); s.className = 'w'; s.textContent = part; frag.appendChild(s); }
+        });
+        node.replaceChild(frag, c);
+      } else if (c.nodeType === 1 && c.tagName === 'EM') split(c);
+    });
+  })(st);
+  var words = st.querySelectorAll('.w');
+  function readProgress(){
+    if (reduce) return;
+    var r = st.getBoundingClientRect(), vh = innerHeight;
+    var p = Math.min(1, Math.max(0, (vh*0.85 - r.top) / (r.height + vh*0.35)));
+    var lit = Math.round(p * words.length);
+    for (var i=0;i<words.length;i++) words[i].style.opacity = i < lit ? 1 : .16;
+  }
+  addEventListener('scroll', readProgress, {passive:true}); readProgress();
+
+  /* Index */
   var P = [
-    {t:'Showreel 2026', k:'REEL', c:'Film', v:'hero_reel', role:'DIRECTOR · DP · EDITOR', line:'Narrative, documentary and branded work in one cut.'},
-    {t:"Wild 'N Out Live", k:'BTS · BARCLAYS CENTER', c:'Live', v:'wildnout', role:'BEHIND THE SCENES · EVENT DOCUMENTARY · 9:21', line:'Backstage access before the show: artist moments, production energy and the pace of a major live event.'},
-    {t:'The Rehearsal', k:'NARRATIVE SHORT', c:'Film', v:'rehearsal', role:'WRITER · DIRECTOR · DP · EDITOR', line:'A young man preparing for a life-changing audition finds the lines becoming uncomfortably personal.'},
-    {t:'Deception', k:'PRIME VIDEO', c:'Film', i:'deception-poster.jpg', alt:'Poster for the short film Deception', role:'WRITER · DIRECTOR · PRODUCER · 9 MIN', line:'An unexpected discovery of infidelity sends a couple down a path of difficult choices and emotional reckoning.'},
-    {t:'Susan Oludele', k:'DOCUMENTARY', c:'Documentary', i:'susan.jpg', alt:'Susan Oludele during her documentary interview', role:'PRODUCER · DIRECTOR · DP · EDITOR', line:'From her beginnings to world-renowned celebrity hairstylist, told with authentic, cinematic storytelling.'},
-    {t:'Lighting Studies', k:'CINEMATOGRAPHY', c:'Craft', v:'lighting', role:'DP · LIGHTING', line:'One subject, four moods: beauty, dramatic, comedy and suspense lighting.'},
-    {t:'Typerception Studio', k:'STUDIO BTS', c:'Craft', v:'studio', role:'PRODUCTION', line:'Green screen, cinema camera and the director’s chair: inside a Typerception set.'},
-    {t:'Brooklyn Aerials', k:'DRONE', c:'Craft', v:'drone', role:'DRONE / AERIAL', line:'Golden-hour aerials over Brooklyn with the Manhattan skyline on the horizon.'}
+    {t:'Showreel 2026', c:'Film', v:'hero_reel', role:'Director · DP · Editor', line:'Narrative, documentary and branded work in one cut.'},
+    {t:"Wild 'N Out Live", c:'Live', v:'wildnout', role:'Event documentary · 9:21', line:'Backstage before the show: artists, crew and the pace of a major live event at Barclays Center.'},
+    {t:'The Rehearsal', c:'Film', v:'rehearsal', role:'Writer · Director · DP', line:'A young man preparing for a life-changing audition finds the lines becoming uncomfortably personal.'},
+    {t:'Deception', c:'Film', i:'deception_p.jpg', role:'Writer · Director · Producer', line:'An unexpected discovery of infidelity sends a couple down a path of difficult choices. Streaming on Prime Video.'},
+    {t:'Susan Oludele', c:'Documentary', i:'susan.jpg', role:'Producer · Director · DP', line:'From her beginnings to world-renowned celebrity hairstylist, told in her own words.'},
+    {t:'Lighting Studies', c:'Craft', v:'lighting', role:'DP · Lighting', line:'One subject, four moods: beauty, dramatic, comedy and suspense lighting.'},
+    {t:'Studio Sessions', c:'Craft', v:'studio', role:'Production', line:'Green screen, cinema camera and the director’s chair inside a Typerception set.'},
+    {t:'Brooklyn Aerials', c:'Craft', v:'drone', role:'Drone · Aerial', line:'Golden-hour aerials over Brooklyn with Manhattan on the horizon.'}
   ];
-  var screen = document.getElementById('screen'), rows = document.getElementById('rows');
+  var proj = document.getElementById('proj'), rows = document.getElementById('rows');
+  var nowline = document.getElementById('nowline'), nowrole = document.getElementById('nowrole');
   var layers = P.map(function(p){
-    var d = document.createElement('div'); d.className = 'layer';
-    if (p.v) { var v = document.createElement('video'); v.src = 'media/'+p.v+'.mp4'; v.poster = 'media/'+p.v+'_p.jpg'; v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'metadata'; v.setAttribute('aria-hidden','true'); d.appendChild(v); }
-    else { var im = document.createElement('img'); im.src = 'media/'+p.i; im.alt = p.alt; d.appendChild(im); }
-    screen.insertBefore(d, screen.firstChild); return d;
+    var d = document.createElement('div'); d.className = 'ly';
+    if (p.v) { var v = document.createElement('video'); v.src = 'media/' + p.v + '.mp4'; v.poster = 'media/' + p.v + '_p.jpg'; v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'none'; d.appendChild(v); }
+    else { var im = document.createElement('img'); im.src = 'media/' + p.i; im.alt = ''; d.appendChild(im); }
+    proj.appendChild(d); return d;
   });
-  var active = 0, filter = 'All';
-  function pad(n){ return (n<10?'0':'')+n; }
-  function pick(i){
-    active = i;
-    layers.forEach(function(l, j){
-      l.classList.toggle('on', j===i);
-      var v = l.querySelector('video'); if (v) { if (j===i && !reduce) play(v); else v.pause(); }
-    });
-    document.getElementById('counter').textContent = pad(i+1)+' / '+pad(P.length);
-    document.getElementById('role').textContent = P[i].role;
-    document.getElementById('line').textContent = P[i].line;
-    Array.prototype.forEach.call(rows.children, function(r){ r.classList.toggle('on', +r.dataset.i===i); });
+  var cur = -1;
+  function show(i){
+    if (i === cur) return;
+    if (cur > -1) { layers[cur].classList.remove('on'); var ov = layers[cur].querySelector('video'); if (ov) ov.pause(); }
+    cur = i;
+    var L = layers[i]; L.classList.add('on');
+    var v = L.querySelector('video'); if (v && !reduce) { v.muted = true; var pr = v.play(); if (pr && pr.catch) pr.catch(function(){}); }
+    Array.prototype.forEach.call(rows.children, function(r){ r.classList.toggle('on', +r.dataset.i === i); });
+    nowline.textContent = P[i].line; nowrole.textContent = P[i].role;
   }
-  function render(){
-    rows.innerHTML = '';
-    P.forEach(function(p, i){
-      if (filter!=='All' && p.c!==filter) return;
-      var a = document.createElement('a'); a.className='row'; a.href='#index'; a.dataset.i=i;
-      a.innerHTML = '<span class="n">'+pad(i+1)+'</span><span class="t"></span><span class="k"></span>';
-      a.querySelector('.t').textContent = p.t; a.querySelector('.k').textContent = p.k;
-      a.addEventListener('mouseenter', function(){ pick(i); });
-      a.addEventListener('focus', function(){ pick(i); });
-      a.addEventListener('click', function(e){ e.preventDefault(); pick(i); });
-      rows.appendChild(a);
-    });
-    var first = rows.firstChild; if (first && P[active].c!==filter && filter!=='All') pick(+first.dataset.i); else pick(active);
-  }
-  document.querySelectorAll('.chip').forEach(function(b){
+  P.forEach(function(p, i){
+    var li = document.createElement('li'); li.className = 'row'; li.dataset.i = i; li.dataset.c = p.c; li.tabIndex = 0;
+    li.innerHTML = '<span class="lab no">' + (i<9?'0':'') + (i+1) + '</span><h3 class="cond">' + p.t + '</h3><span class="lab ct">' + p.c + '</span><span class="lab rl mute">' + p.role + '</span>';
+    li.addEventListener('mouseenter', function(){ rows.classList.add('hov'); show(i); });
+    li.addEventListener('focus', function(){ rows.classList.add('hov'); show(i); });
+    li.addEventListener('click', function(){ rows.classList.add('hov'); show(i); });
+    rows.appendChild(li);
+  });
+  rows.addEventListener('mouseleave', function(){ rows.classList.remove('hov'); });
+  show(0); rows.classList.remove('hov');
+  if (!fine) document.getElementById('hint').textContent = 'Tap a title';
+
+  var cats = ['All','Film','Documentary','Live','Craft'], fl = document.getElementById('filters');
+  cats.forEach(function(c){
+    var n = c === 'All' ? P.length : P.filter(function(p){ return p.c === c; }).length;
+    var b = document.createElement('button'); b.innerHTML = c + '<sup>' + (n<10?'0':'') + n + '</sup>';
+    if (c === 'All') b.classList.add('on');
     b.addEventListener('click', function(){
-      filter = b.dataset.f;
-      document.querySelectorAll('.chip').forEach(function(x){ x.setAttribute('aria-pressed', x===b ? 'true':'false'); });
-      render();
+      Array.prototype.forEach.call(fl.children, function(x){ x.classList.toggle('on', x === b); });
+      var first = -1;
+      Array.prototype.forEach.call(rows.children, function(r){
+        var hide = c !== 'All' && r.dataset.c !== c; r.classList.toggle('hide', hide);
+        if (!hide && first < 0) first = +r.dataset.i;
+      });
+      if (first > -1) show(first);
     });
+    fl.appendChild(b);
   });
-  render();
-  document.querySelectorAll('[data-pick]').forEach(function(c){ c.addEventListener('click', function(){ pick(+c.dataset.pick); }); });
+  document.querySelectorAll('[data-open]').forEach(function(a){
+    a.addEventListener('click', function(){ show(+a.dataset.open); });
+  });
 
-  // Cursor follower on the preview
-  var cur = document.getElementById('cursor');
-  screen.addEventListener('mousemove', function(e){ var r = screen.getBoundingClientRect(); cur.style.left=(e.clientX-r.left)+'px'; cur.style.top=(e.clientY-r.top)+'px'; });
+  /* Cursor label over film */
+  var c = document.getElementById('cur');
+  if (fine && !reduce) {
+    var x = 0, y = 0, cx = 0, cy = 0;
+    addEventListener('mousemove', function(e){ x = e.clientX; y = e.clientY; });
+    (function follow(){ cx += (x-cx)*.18; cy += (y-cy)*.18; c.style.left = cx + 'px'; c.style.top = cy + 'px'; requestAnimationFrame(follow); })();
+    document.querySelectorAll('[data-cur]').forEach(function(el){
+      el.addEventListener('mouseenter', function(){ c.textContent = el.dataset.cur; c.classList.add('on'); });
+      el.addEventListener('mouseleave', function(){ c.classList.remove('on'); });
+    });
+  }
 
-  // Inquiry form (demo only)
-  document.getElementById('inq').addEventListener('submit', function(e){ e.preventDefault(); document.getElementById('ok').textContent = 'Sample form: on the Wix site this goes to Ty’s inbox.'; });
+  /* Demo form */
+  document.getElementById('form').addEventListener('submit', function(e){
+    e.preventDefault(); document.getElementById('sent').style.display = 'block';
+  });
 
-  // Wix notes toggle
-  var wt = document.getElementById('wixToggle');
-  wt.addEventListener('click', function(){
-    var on = document.body.classList.toggle('show-wix');
-    wt.setAttribute('aria-pressed', on ? 'true':'false');
-    wt.textContent = on ? 'Hide Wix build notes' : 'Show Wix build notes';
+  /* Wix notes */
+  var wb = document.getElementById('wixbtn');
+  wb.addEventListener('click', function(){
+    var on = document.body.classList.toggle('notes-on');
+    wb.textContent = on ? 'Hide Wix notes' : 'Show Wix notes'; wb.setAttribute('aria-pressed', on);
   });
 })();
 </script>
